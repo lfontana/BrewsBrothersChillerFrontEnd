@@ -1,0 +1,38 @@
+body{
+  background-color: grey;
+  margin:0;
+}
+
+.background{
+  background-image: url('http://il7.picdn.net/shutterstock/videos/2858305/thumb/1.jpg');
+  background-size: cover;
+  background-color: black;
+  height:100vh;
+  text-align: center;
+}
+.about{
+  background-color: black;
+  height: 100vh;
+}
+.login-h1{
+  margin-top: 0;
+}
+.about-foot{
+  margin-top: 75vh;
+  text-align: center;
+  color: grey;
+}
+.facebook{
+  background-color: blue;
+  color:white;
+}
+.google{
+  background-color: red;
+  color:white;
+}
+.lower{
+  margin-bottom: 2vh;
+}
+.comment-container{
+  width:50vh;
+}
