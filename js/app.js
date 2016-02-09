@@ -20,3 +20,10 @@ app.config(function($routeProvider) {
       })
       .otherwise({redirectTo: "/login"})
 });
+
+app.directive('navBar', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'partials/navbar.html'
+  };
+});
