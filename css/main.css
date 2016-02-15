@@ -33,6 +33,10 @@ body{
 .lower{
   margin-bottom: 2vh;
 }
-.comment-container{
-  width:50vh;
+.brews-container{
+  /*width:50vh;*/
+}
+
+.media-left > a > img {
+  width: 100px;
 }

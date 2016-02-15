@@ -1,3 +1,13 @@
-<nav-bar></nav-bar>
 <h1>{{place}}</h1>
-<a href="#/home" class="btn btn-default">Home</a>
+<a href="#/home" class="btn btn-default" ng-click="clear()">Home</a>
+<div class="media">
+  <div class="media-left">
+    <a ng-href="#/batch:{{batch.name}}" ng-click="clear()">
+      <img class="media-object" ng-src="{{batch.data.url}}" alt="">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Name: {{batch.name}} <span>Creation date: {{batch.created}}</span></h4>
+    <p><span>Style: {{batch.style}}</span> <span>Last run: {{batch.lastRun}}</span></p>
+  </div>
+</div>

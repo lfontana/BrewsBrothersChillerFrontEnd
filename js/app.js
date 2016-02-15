@@ -10,10 +10,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/home.html',
         controller: 'HomeController'
       })
-      .when('/batch', {
-        templateUrl: 'partials/batch.html',
-        controller: 'BatchController'
-      })
+      // .when('/batch', {
+      //   templateUrl: 'partials/batch.html',
+      //   controller: 'BatchController'
+      // })
       .when('/newbrew', {
         templateUrl: 'partials/newbrew.html',
         controller: 'NewBrewController'
@@ -25,5 +25,12 @@ app.directive('navBar', function() {
   return {
     restrict: 'E',
     templateUrl: 'partials/navbar.html'
+  };
+});
+
+app.directive('batch', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'partials/batch.html'
   };
 });

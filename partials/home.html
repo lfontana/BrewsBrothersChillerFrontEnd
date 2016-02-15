@@ -1,10 +1,21 @@
 <nav-bar></nav-bar>
 <h1>{{greeting}}</h1>
-<a href="#/login" class="btn btn-default lower">Logout</a>
-<a href="#/newbrew" class="btn btn-default lower">New Brew</a>
-<a href="#/batch" class="btn btn-default lower">Batch</a>
-<div class="comment-container" ng-repeat="post in comments">
-  <div class="panel">
-    {{post.post}}
+<a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
+<a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a>
+<batch ng-show="singleBrew"></batch>
+<div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
+  <div ng-click="showBatch(brew)">
+    <div class="media">
+      <div class="media-left">
+        <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
+          <img class="media-object" ng-src="{{brew.data.url}}" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Name: {{brew.name}} <span>Creation date: {{brew.created}}</span></h4>
+        <p><span>Style: {{brew.style}}</span> <span>Last run: {{brew.lastRun}}</span></p>
+        <button ng-click="brew.favorite = !brew.favorite"></button>
+      </div>
+    </div>
   </div>
 </div>
