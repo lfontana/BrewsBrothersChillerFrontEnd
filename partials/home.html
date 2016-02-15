@@ -4,18 +4,16 @@
 <a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a>
 <batch ng-show="singleBrew"></batch>
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
-  <div ng-click="showBatch(brew)">
-    <div class="media">
-      <div class="media-left">
-        <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
-          <img class="media-object" ng-src="{{brew.data.url}}" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Name: {{brew.name}} <span>Creation date: {{brew.created}}</span></h4>
-        <p><span>Style: {{brew.style}}</span> <span>Last run: {{brew.lastRun}}</span></p>
-        <button ng-click="brew.favorite = !brew.favorite"></button>
-      </div>
+  <div class="media">
+    <div class="media-left">
+      <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
+        <img class="media-object" ng-src="{{brew.data.url}}" alt="">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}} <span>Creation date: {{brew.created}}</span></h4>
+      <p ng-click="showBatch(brew)"><span>Style: {{brew.style}}</span> <span>Last run: {{brew.lastRun}}</span></p>
+      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
     </div>
   </div>
 </div>
