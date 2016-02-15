@@ -1,3 +1,21 @@
 <nav-bar></nav-bar>
 <h1>{{place}}</h1>
-<a href="#/home" class="btn btn-default">Home</a>
+<form>
+  <div class="form-group">
+    <label for="batchName"></label>
+    <input ng-model="brew.name"id="batchName" type="text" class="form-control" placeholder="Name">
+    <div ng-model="brew.style" class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{brew.style}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li ng-click="setStyle('Lager')">Lager</li>
+        <li ng-click="setStyle('Porter')">Porter</li>
+        <li ng-click="setStyle('Stout')">Stout</li>
+        <li ng-click="setStyle('Ale')">Ale</li>
+      </ul>
+    </div>
+  </div>
+  <a href="#/home" type="submit" class="btn btn-default" ng-click="submitBatch()">Submit</a>
+</form>
+<a href="#/home" class="btn btn-default">Cancel</a>
