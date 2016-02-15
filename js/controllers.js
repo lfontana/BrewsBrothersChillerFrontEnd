@@ -16,5 +16,18 @@ app.controller('BatchController', function($scope){
   $scope.place = 'Batch View'
 })
 app.controller('NewBrewController', function($scope){
+  clearBrew()
   $scope.place = 'New Brew'
+  $scope.submitBatch = function(){
+    $scope.brew.dateCreated = new Date();
+    console.log($scope.brew);
+    clearBrew();
+  }
+  $scope.setStyle= function(style){
+    $scope.brew.style=style
+  }
+  function clearBrew(){
+    $scope.brew={}
+    $scope.brew.style = "Style"
+  }
 })
