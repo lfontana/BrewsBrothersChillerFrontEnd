@@ -1,73 +1,73 @@
 app.controller('HomeController', function($scope, $http){
-  // $http.get('https://chillerdb.herokuapp.com/dashboard').then(function(data){
-  //   $scope.brews = data;
-  //   console.log($scope.brews);
-  // });
-  $scope.brews = [
-    {
-    name: "My First Pale Ale",
-    style: "Pale Ple",
-    created: 1454673600,
-    lastRun: 1454846400,
-    favorite: false,
-    schedule: [
-        {
-        time: 0,
-        temp: 68
-        },
-        {
-        time: 86400,
-        temp: 65
-        },
-        {
-        time: 604800,
-        temp: 50
-        }
-      ]
-    },
-    {
-    name: "My Second Pale Ale",
-    style: "Pale Ple",
-    created: 1454673600,
-    lastRun: 1454846400,
-    favorite: false,
-    schedule: [
-        {
-        time: 0,
-        temp: 68
-        },
-        {
-        time: 86400,
-        temp: 65
-        },
-        {
-        time: 604800,
-        temp: 50
-        }
-      ]
-    },
-    {
-    name: "My First Stout",
-    style: "Stout",
-    created: 1454673600,
-    lastRun: 1454846400,
-    favorite: false,
-    schedule: [
-        {
-        time: 0,
-        temp: 68
-        },
-        {
-        time: 86400,
-        temp: 65
-        },
-        {
-        time: 604800,
-        temp: 50
-        }
-      ]
-    },
-  ]
+  $http.get('https://chillerdb.herokuapp.com/dashboard').then(function(data){
+    $scope.brews = data.data;
+    console.log($scope.brews);
+  });
+  // $scope.brews = [
+  //   {
+  //   name: "My First Pale Ale",
+  //   style: "Pale Ple",
+  //   created: 1454673600,
+  //   lastRun: 1454846400,
+  //   favorite: false,
+  //   schedule: [
+  //       {
+  //       time: 0,
+  //       temp: 68
+  //       },
+  //       {
+  //       time: 86400,
+  //       temp: 65
+  //       },
+  //       {
+  //       time: 604800,
+  //       temp: 50
+  //       }
+  //     ]
+  //   },
+  //   {
+  //   name: "My Second Pale Ale",
+  //   style: "Pale Ple",
+  //   created: 1454673600,
+  //   lastRun: 1454846400,
+  //   favorite: false,
+  //   schedule: [
+  //       {
+  //       time: 0,
+  //       temp: 68
+  //       },
+  //       {
+  //       time: 86400,
+  //       temp: 65
+  //       },
+  //       {
+  //       time: 604800,
+  //       temp: 50
+  //       }
+  //     ]
+  //   },
+  //   {
+  //   name: "My First Stout",
+  //   style: "Stout",
+  //   created: 1454673600,
+  //   lastRun: 1454846400,
+  //   favorite: false,
+  //   schedule: [
+  //       {
+  //       time: 0,
+  //       temp: 68
+  //       },
+  //       {
+  //       time: 86400,
+  //       temp: 65
+  //       },
+  //       {
+  //       time: 604800,
+  //       temp: 50
+  //       }
+  //     ]
+  //   },
+  // ]
   $scope.greeting = 'Welcome Brews Brothers';
   $scope.singleBrew = false;
   $scope.showBatch = function(batch) {

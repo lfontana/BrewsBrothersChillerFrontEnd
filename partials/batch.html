@@ -3,11 +3,11 @@
 <div class="media">
   <div class="media-left">
     <a ng-href="#/batch:{{batch.name}}" ng-click="clear()">
-      <img class="media-object" ng-src="{{batch.data.url}}" alt="">
+      <img class="media-object" src="http://vector.me/files/images/1/0/100279/mug_of_beer_clip_art.jpg" alt="">
     </a>
   </div>
   <div class="media-body">
-    <h4 class="media-heading">Name: {{batch.name}} <span>Creation date: {{batch.created}}</span></h4>
-    <p><span>Style: {{batch.style}}</span> <span>Last run: {{batch.lastRun}}</span></p>
+    <h4 class="media-heading">Name: {{batch.name}} <small class="date">Creation date: {{batch.created | date}}</small></h4>
+    <p><small>Style: {{batch.style}}</small> <small class="date">Last run: {{batch.lastRun | date}}</small></p>
   </div>
 </div>

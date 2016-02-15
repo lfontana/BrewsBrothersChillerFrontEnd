@@ -5,6 +5,9 @@ body{
 a{
   text-decoration: none !important;
 }
+small.date {
+  color: white;
+}
 .background{
   background-image: url('http://il7.picdn.net/shutterstock/videos/2858305/thumb/1.jpg');
   background-size: cover;
@@ -47,4 +50,5 @@ a{
 
 .media-left > a > img {
   width: 100px;
+  border-radius: 5px;
 }
