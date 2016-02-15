@@ -78,7 +78,6 @@ app.controller('HomeController', function($scope, $http){
     $scope.batch = batch;
   }
   $scope.clear = function() {
-    console.log("working");
     $scope.singleBrew = false;
   }
 })
@@ -89,9 +88,9 @@ app.controller('LoginController', function($scope, $anchorScroll, $location){
    $anchorScroll();
   }
 })
-app.controller('BatchController', function($scope, $stateParams){
-  $scope.place = 'Batch View';
-})
+// app.controller('BatchController', function($scope, $stateParams){
+//   $scope.place = 'Batch View';
+// })
 app.controller('NewBrewController', function($scope){
   clearBrew()
   $scope.place = 'New Brew'
