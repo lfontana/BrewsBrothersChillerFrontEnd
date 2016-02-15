@@ -79,8 +79,12 @@ app.controller('HomeController', function($scope, $http){
     $scope.singleBrew = false;
   }
 })
-app.controller('LoginController', function($scope){
+app.controller('LoginController', function($scope, $anchorScroll, $location){
   $scope.place = 'Login'
+  $scope.toAbout = function() {
+   $location.hash('about');
+   $anchorScroll();
+  }
 })
 app.controller('BatchController', function($scope, $stateParams){
   $scope.place = 'Batch View';
