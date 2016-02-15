@@ -1,8 +1,11 @@
-app.controller('HomeController', function($scope, $http){
+app.controller('mainController', function($scope, $http) {
   $http.get('https://chillerdb.herokuapp.com/dashboard').then(function(data){
     $scope.brews = data.data;
     console.log($scope.brews);
   });
+})
+
+app.controller('HomeController', function($scope, $http){
   // $scope.brews = [
   //   {
   //   name: "My First Pale Ale",
@@ -93,15 +96,17 @@ app.controller('NewBrewController', function($scope){
   clearBrew()
   $scope.place = 'New Brew'
   $scope.submitBatch = function(){
-    $scope.brew.dateCreated = new Date();
+    $scope.brew.created = new Date();
+    $scope.brew.lastRun = $scope.brew.created;
     console.log($scope.brew);
+    $scope.brews.push($scope.brew)
     clearBrew();
   }
-  $scope.setStyle= function(style){
-    $scope.brew.style=style
+  $scope.setStyle = function(style){
+    $scope.brew.style = style;
   }
   function clearBrew(){
-    $scope.brew={}
-    $scope.brew.style = "Style"
+    $scope.brew = {};
+    $scope.brew.style = "Style";
   }
 })
