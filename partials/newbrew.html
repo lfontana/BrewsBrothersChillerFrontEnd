@@ -9,14 +9,18 @@
         {{brew.style}} <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li ng-click="setStyle('Lager')">Lager</li>
-        <li ng-click="setStyle('Porter')">Porter</li>
-        <li ng-click="setStyle('Stout')">Stout</li>
-        <li ng-click="setStyle('Ale')">Ale</li>
+        <li ng-click="setStyle(4)">Lager</li>
+        <li ng-click="setStyle(3)">Porter</li>
+        <li ng-click="setStyle(2)">Stout</li>
+        <li ng-click="setStyle(1)">Ale</li>
       </ul>
-      <ul>
-        <li ng-repeat="temps in brew.style.schedule"></li>
-      </ul>
+      <div class="input-group" ng-repeat="temp in brew.schedule">
+        <span class="input-group-addon"></span>
+        <input type="date" class="form-control" placeholder="Input time" ng-model="temp.time">
+        <span class="input-group-addon"></span>
+        <input type="number" class="form-control" placeholder="Input temp" ng-model="temp.temp">
+
+      </div>
     </div>
   </div>
   <a href="#/home" type="submit" class="btn btn-default" ng-click="submitBatch()">Save Batch</a>
