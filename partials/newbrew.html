@@ -14,8 +14,11 @@
         <li ng-click="setStyle('Stout')">Stout</li>
         <li ng-click="setStyle('Ale')">Ale</li>
       </ul>
+      <ul>
+        <li ng-repeat="temps in brew.style.schedule"></li>
+      </ul>
     </div>
   </div>
-  <a href="#/home" type="submit" class="btn btn-default" ng-click="submitBatch()">Submit</a>
+  <a href="#/home" type="submit" class="btn btn-default" ng-click="submitBatch()">Save Batch</a>
+  <a href="#/home" class="btn btn-default">Cancel</a>
 </form>
-<a href="#/home" class="btn btn-default">Cancel</a>

@@ -3,74 +3,8 @@ app.controller('mainController', function($scope, $http) {
     $scope.brews = data.data;
     console.log($scope.brews);
   });
-})
 
 app.controller('HomeController', function($scope, $http){
-  // $scope.brews = [
-  //   {
-  //   name: "My First Pale Ale",
-  //   style: "Pale Ple",
-  //   created: 1454673600,
-  //   lastRun: 1454846400,
-  //   favorite: false,
-  //   schedule: [
-  //       {
-  //       time: 0,
-  //       temp: 68
-  //       },
-  //       {
-  //       time: 86400,
-  //       temp: 65
-  //       },
-  //       {
-  //       time: 604800,
-  //       temp: 50
-  //       }
-  //     ]
-  //   },
-  //   {
-  //   name: "My Second Pale Ale",
-  //   style: "Pale Ple",
-  //   created: 1454673600,
-  //   lastRun: 1454846400,
-  //   favorite: false,
-  //   schedule: [
-  //       {
-  //       time: 0,
-  //       temp: 68
-  //       },
-  //       {
-  //       time: 86400,
-  //       temp: 65
-  //       },
-  //       {
-  //       time: 604800,
-  //       temp: 50
-  //       }
-  //     ]
-  //   },
-  //   {
-  //   name: "My First Stout",
-  //   style: "Stout",
-  //   created: 1454673600,
-  //   lastRun: 1454846400,
-  //   favorite: false,
-  //   schedule: [
-  //       {
-  //       time: 0,
-  //       temp: 68
-  //       },
-  //       {
-  //       time: 86400,
-  //       temp: 65
-  //       },
-  //       {
-  //       time: 604800,
-  //       temp: 50
-  //       }
-  //     ]
-  //   },
-  // ]
   $scope.greeting = 'Welcome Brews Brothers';
   $scope.singleBrew = false;
   $scope.showBatch = function(batch) {
@@ -103,9 +37,71 @@ app.controller('NewBrewController', function($scope){
   }
   $scope.setStyle = function(style){
     $scope.brew.style = style;
-  }
+    // if (style === "Ale") {
+    //   $scope.brew.schedule = [
+    //         {
+    //         time: 0,
+    //         temp: 68
+    //         },
+    //         {
+    //         time: 86400,
+    //         temp: 65
+    //         },
+    //         {
+    //         time: 604800,
+    //         temp: 50
+    //         }
+    //       ];
+    // } else if (style === "Stout") {
+    //   $scope.brew.schedule = [
+    //         {
+    //         time: 0,
+    //         temp: 68
+    //         },
+    //         {
+    //         time: 76400,
+    //         temp: 75
+    //         },
+    //         {
+    //         time: 504800,
+    //         temp: 60
+    //         }
+    //       ];
+    // } else if (style === "Porter") {
+    //   $scope.brew.schedule = [
+    //         {
+    //         time: 0,
+    //         temp: 58
+    //         },
+    //         {
+    //         time: 96400,
+    //         temp: 55
+    //         },
+    //         {
+    //         time: 704800,
+    //         temp: 60
+    //         }
+    //       ];
+    // } else if (style === "Lager") {
+    //   $scope.brew.schedule = [
+    //         {
+    //         time: 0,
+    //         temp: 58
+    //         },
+    //         {
+    //         time: 96400,
+    //         temp: 55
+    //         },
+    //         {
+    //         time: 704800,
+    //         temp: 60
+    //         }
+    //       ];
+    // };
+    $scope.brew.schedule = $scope.sampleBrews.schedule;
+  };
   function clearBrew(){
     $scope.brew = {};
     $scope.brew.style = "Style";
-  }
-})
+  };
+});
