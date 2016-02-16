@@ -1,5 +1,5 @@
 <h1>{{place}}</h1>
-<a href="#/home" class="btn btn-default" ng-click="clear()">Home</a>
+<a href="#/home" class="btn btn-default" ng-click="clear()">All batches</a>
 <div class="media">
   <div class="media-left">
     <a ng-href="#/batch:{{batch.name}}" ng-click="clear()">
@@ -9,5 +9,6 @@
   <div class="media-body">
     <h4 class="media-heading">Name: {{batch.name}} <small class="date">Creation date: {{batch.created | date}}</small></h4>
     <p><small>Style: {{batch.style}}</small> <small class="date">Last run: {{batch.lastRun | date}}</small></p>
+    <input type="text" name="notes" placeholder="make notes on this beer here" ng-model="brew.notes">
   </div>
 </div>
