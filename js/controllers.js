@@ -46,6 +46,7 @@ app.controller('NewBrewController', function($scope, $http){
     $scope.brew.schedule = [];
     console.log($scope.brew);
     if (style === "Ale") {
+      $scope.brew.styleNumber = 1;
       $scope.brew.schedule = [
             {
             time: time,
@@ -61,6 +62,7 @@ app.controller('NewBrewController', function($scope, $http){
             }
           ];
     } else if (style === "Stout") {
+      $scope.brew.styleNumber = 2;
       $scope.brew.schedule = [
             {
             time: 0,
@@ -76,6 +78,7 @@ app.controller('NewBrewController', function($scope, $http){
             }
           ];
     } else if (style === "Porter") {
+      $scope.brew.styleNumber = 3;
       $scope.brew.schedule = [
             {
             time: 0,
@@ -91,6 +94,7 @@ app.controller('NewBrewController', function($scope, $http){
             }
           ];
     } else if (style === "Lager") {
+      $scope.brew.styleNumber = 4;
       $scope.brew.schedule = [
             {
             time: 0,
