@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 
 gulp.task('test', function() {
 	console.log('this is where my tests will go');
-	return
+	return;
 });
 
 gulp.task('default', ['serve']);
