@@ -6,3 +6,4 @@ Repo for the BrewsBrothers project
 * I just hooked the dashboard page up to a backend I already have deployed so don't be surprised if there are comments for the bank job instead of past batches
 * The search doesn't do anything
 * The auth doesn't do anything they are just buttons
+* testing with Travis CI
