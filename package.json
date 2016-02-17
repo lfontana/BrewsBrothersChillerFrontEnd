@@ -1,0 +1,23 @@
+{
+  "name": "bb_app",
+  "version": "1.0.0",
+  "description": "\"brew your own\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Shibley/BrewsBrothersChillerFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Shibley/BrewsBrothersChillerFrontEnd/issues"
+  },
+  "homepage": "https://github.com/David-Shibley/BrewsBrothersChillerFrontEnd#readme",
+  "dependencies": {
+    "angular-moment": "^1.0.0-beta.4",
+    "moment": "^2.11.2"
+  }
+}

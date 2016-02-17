@@ -1,9 +1,30 @@
 app.controller('mainController', function($scope, $http) {
+  $scope.user_id = 1;
+  $scope.sampleData = {
+    name: "Pale Ale - Default",
+    style: "pale ale",
+    created: "Wed Feb 17 2016 14:51:24 GMT-0700",
+    lastRun: "Wed Feb 17 2016 14:51:24 GMT-0700",
+    favorite: false,
+    schedule: [
+      {
+        time: 0,
+        temp: 68
+      },
+      {
+        time: 86400,
+        temp: 65
+      },
+      {
+        time: 604800,
+        temp: 50
+      }
+    ]
+  }
   $http.get('https://chillerdb.herokuapp.com/dashboard').then(function(data){
     $scope.brews = data.data;
-    console.log($scope.brews);
+    $scope.brews.push($scope.sampleData);
   });
-  $scope.user_id = 1;
 });
 app.controller('HomeController', function($scope, $http){
   $scope.greeting = 'Welcome Brews Brothers';
@@ -36,10 +57,13 @@ app.controller('NewBrewController', function($scope, $http){
     console.log($scope.brew);
     $scope.brews.push($scope.brew)
     // $http.post('https://chillerdb.herokuapp.com/batch', $scope.brew, config).then(successCallback, errorCallback);
-    $http.post('localhost:3000/dashboard', $scope.brew).then(successCallback, errorCallback);
+    $http.post('https://chillerdb.herokuapp.com/dashboard', $scope.brew).then(function(successCallback, errorCallback){});
     clearBrew();
   }
-
+  $scope.deleteBatch = function(){
+    $http.delete('https://chillerdb.herokuapp.com/dashboard', $scope.brew).then(function(successCallback, errorCallback){});
+    clearBrew();
+  }
   $scope.setStyle = function(style){
     var time = new Date();
     $scope.brew.style = style;

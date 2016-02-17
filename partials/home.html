@@ -3,6 +3,9 @@
 <a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
 <a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a>
 <batch ng-show="singleBrew"></batch>
+<div class="">
+  {{brews}}
+</div>
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
   <div class="media">
     <div class="media-left">
@@ -11,8 +14,8 @@
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: {{brew.created | date}}</small></h4>
-      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: {{brew.lastRun | date}}</small></h5>
+      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: <span am-time-ago="brew.created"></span></small></h4>
+      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: <span am-time-ago="brew.lastRun"></span></small></h5>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
     </div>
   </div>
