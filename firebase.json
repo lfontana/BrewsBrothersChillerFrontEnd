@@ -1,0 +1,9 @@
+{
+  "firebase": "BrewsBrothersChillerFrontEnd",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
