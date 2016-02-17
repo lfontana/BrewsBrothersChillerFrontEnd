@@ -1,56 +1,70 @@
-body{
-  background-color: grey;
-  margin:0;
-}
-a{
-  text-decoration: none !important;
-}
+/* Top Level Styling */
+body {
+  margin: 0; }
+
+a {
+  text-decoration: none !important; }
+
 small.date {
-  color: white;
-}
-.background{
-  background-image: url('http://il7.picdn.net/shutterstock/videos/2858305/thumb/1.jpg');
+  color: white; }
+
+/* Flexy Stuff */
+/* Element Styling */
+.background {
+  background-image: url("http://il7.picdn.net/shutterstock/videos/2858305/thumb/1.jpg");
   background-size: cover;
   background-color: black;
-  height:100vh;
-  text-align: center;
-}
-.about{
+  height: 100vh;
+  text-align: center; }
+
+.about {
   background-color: black;
   height: 100vh;
   color: #b3b3b3;
-  text-align: center;
-}
-.about-title{
+  text-align: center; }
+
+.about-title {
   margin: 0;
-  padding-top: 5vh;
-}
-.login-h1{
-  margin-top: 0;
-}
-.about-foot{
+  padding-top: 5vh; }
+
+.login-h1 {
+  margin-top: 0; }
+
+.about-foot {
   margin-top: 75vh;
   text-align: center;
-  color: grey;
-}
-.facebook{
+  color: grey; }
+
+.facebook {
   background-color: blue;
-  color:white;
-}
-.google{
+  color: white; }
+
+.google {
   background-color: red;
-  color:white;
-}
-.lower{
-  margin-bottom: 2vh;
-}
-.brews-container{
-  /*width:50vh;*/
-}
-.avatar {
+  color: white; }
+
+.lower {
+  margin-bottom: 2vh; }
+
+.avatar-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   width: 100px;
-}
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #5a5a5a;
+  overflow: hidden; }
+  .avatar-container .avatar {
+    height: 100px;
+    width: auto;
+    margin: auto; }
+
 .media-left > a > img {
   width: 100px;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
+
+.navbar {
+  margin-top: 10px; }
