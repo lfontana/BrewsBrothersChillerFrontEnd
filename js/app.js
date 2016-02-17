@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/newbrew.html',
         controller: 'NewBrewController'
       })
-      .otherwise({redirectTo: "/login"})
+      .otherwise({redirectTo: "/login"});
 });
 
 app.directive('navBar', function() {

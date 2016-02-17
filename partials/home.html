@@ -4,6 +4,9 @@
 <!-- <a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
 <a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a> -->
 <batch ng-show="singleBrew"></batch>
+<div class="">
+  {{brews}}
+</div>
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
   <div class="batch-card">
     <div class="col-md-3">
@@ -49,7 +52,6 @@
         </div>
       </div>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star favorite-button-clicked"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty favorite-button-empty"></span></div>
-
     </div>
   </div>
 </div>
