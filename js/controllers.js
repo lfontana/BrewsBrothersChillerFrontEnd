@@ -35,7 +35,7 @@ app.controller('NewBrewController', function($scope, $http){
     $scope.brew.user_id = $scope.user_id;
     console.log($scope.brew);
     $scope.brews.push($scope.brew)
-    // $http.post('https://chillerdb.herokuapp.com/batch', $scope.brew, config).then(successCallback, errorCallback);
+    $http.post('https://chillerdb.herokuapp.com/batch', $scope.brew, config).then(successCallback, errorCallback);
     $http.post('localhost:3000/dashboard', $scope.brew).then(successCallback, errorCallback);
     clearBrew();
   }
