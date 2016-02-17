@@ -1,26 +1,27 @@
 {
-  "name": "brews_brothers_front_end",
+  "name": "bb-front-end",
   "version": "1.0.0",
   "description": "Repo for the BrewsBrothers project",
-  "main": "index.html"
-},
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "gulp"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brews-brothers/BrewsBrothersChillerFrontEnd.git"
+    "url": "git+https://github.com/lfontana/BrewsBrothersChillerFrontEnd.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brews-brothers/BrewsBrothersChillerFrontEnd/issues"
+    "url": "https://github.com/lfontana/BrewsBrothersChillerFrontEnd/issues"
   },
-  "homepage": "https://github.com/brews-brothers/BrewsBrothersChillerFrontEnd#readme",
-  "dependencies": {
-    "expect.js": "^0.3.1",
-    "mocha": "^2.4.5",
-    "chai": "*",
-    "gulp": "~3.5.1"
-  },
+  "homepage": "https://github.com/lfontana/BrewsBrothersChillerFrontEnd#readme"
 }
