@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "chai": "^3.5.0",
-    "gulp-sass": "^2.2.0"
+    "gulp-sass": "^2.2.0",
+    "angular-moment": "^1.0.0-beta.4",
+    "moment": "^2.11.2"
   },
   "devDependencies": {},
   "scripts": {
