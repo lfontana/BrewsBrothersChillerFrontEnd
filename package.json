@@ -2,12 +2,10 @@
   "name": "brews_brothers_front_end",
   "version": "1.0.0",
   "description": "Repo for the BrewsBrothers project",
-  "main": "index.html",
-  "directories": {
-    "test": "test"
-  },
+  "main": "index.html"
+},
   "scripts": {
-    "test": "make test"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
   "dependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^2.4.5",
-    "chai": "*"
+    "chai": "*",
+    "gulp": "~3.5.1"
   },
 }
