@@ -31,4 +31,9 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('test', function() {
+	console.log('this is where my tests will go');
+	return
+});
+
 gulp.task('default', ['serve']);
