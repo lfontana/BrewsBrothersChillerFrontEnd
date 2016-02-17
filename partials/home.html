@@ -1,27 +1,55 @@
 <nav-bar></nav-bar>
-<h1>
-  <span>
-    <div class="avatar-container">
-      <img src="http://blogdailyherald.com/wp-content/uploads/2014/10/wallpaper-for-facebook-profile-photo.jpg" alt="" class="avatar"/>
-    </div>
-  </span>
-  {{greeting}}
-</h1>
 
-<a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
-<a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a>
+
+<!-- <a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
+<a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a> -->
 <batch ng-show="singleBrew"></batch>
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
-  <div class="media">
-    <div class="media-left">
+  <div class="batch-card">
+    <div class="col-md-3">
       <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
-        <img class="media-object" src="http://vector.me/files/images/1/0/100279/mug_of_beer_clip_art.jpg" alt="">
+        <div class="beer-glass-container">
+          <iframe class="glass-svg" src="./images/noun_158151_cc.svg"></iframe>
+          <!-- <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/27669-200.png" alt="" class="glass-svg" /> -->
+
+        </div>
       </a>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: {{brew.created | date}}</small></h4>
-      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: {{brew.lastRun | date}}</small></h5>
-      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
+    <div class="col-md-8">
+      <h2 class="" ng-click="showBatch(brew)">Name:
+
+        {{brew.name}}
+        <!-- Test Brew -->
+        <small class="date">Creation date:
+          <!-- January 12, 2016 -->
+           {{brew.created | date}}
+
+         </small></h2>
+      <h4 ng-click="showBatch(brew)">Style:
+        <!-- West Coast Pale Ale -->
+         {{brew.style}}
+         <small class="date">Last run:
+           <!-- February 10, 2016 -->
+            {{brew.lastRun | date}}
+          </small></h4>
+    </div>
+    <div class="col-md-1 buttons-container">
+      <div class="compressor-light-container">
+        <div class="compressor-light compressor-light-off">
+
+        </div>
+
+      </div>
+      <div class="switch-container">
+        <div class="switch-box switch-box-off">
+          <div class="switch">
+
+          </div>
+
+        </div>
+      </div>
+      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star favorite-button-clicked"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty favorite-button-empty"></span></div>
+
     </div>
   </div>
 </div>
