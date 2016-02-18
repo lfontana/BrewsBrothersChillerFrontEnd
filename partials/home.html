@@ -18,7 +18,6 @@
         </div>
       </a>
     </div>
-<<<<<<< HEAD
     <div class="col-md-8">
       <h2 class="" ng-click="showBatch(brew)">Name:
 
@@ -53,18 +52,10 @@
         </div>
       </div>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star favorite-button-clicked"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty favorite-button-empty"></span></div>
-
-||||||| merged common ancestors
     <div class="media-body">
       <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: {{brew.created | date}}</small></h4>
       <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: {{brew.lastRun | date}}</small></h5>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
-=======
-    <div class="media-body">
-      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: <span am-time-ago="brew.created"></span></small></h4>
-      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: <span am-time-ago="brew.lastRun"></span></small></h5>
-      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
->>>>>>> f4bdfc3ed722f440af2f7e9382f1d9e008fea583
     </div>
   </div>
 </div>
