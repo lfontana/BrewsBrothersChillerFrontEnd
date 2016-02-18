@@ -36,6 +36,9 @@ app.controller('HomeController', function($scope, $http){
   $scope.clear = function() {
     $scope.singleBrew = false;
   };
+  $scope.runBatch = function() {
+    $http.post('http://localhost:3333/dashboard')
+  }
 });
 app.controller('LoginController', function($scope, $anchorScroll, $location){
   $scope.place = 'Login'
