@@ -1,6 +1,6 @@
-var app = angular.module('brewsBros', ['ngRoute']);
+var app = angular.module('brewsBros', ['ngRoute','ngStorage']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider,$httpProvider) {
     $routeProvider
       .when('/login',{
         templateUrl: 'partials/login.html',
@@ -18,7 +18,29 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/newbrew.html',
         controller: 'NewBrewController'
       })
-      .otherwise({redirectTo: "/login"});
+      .when('/authenticate/:token/',{
+        templateUrl:'/partials/home.html',
+        controller: 'authController'
+      })
+      .otherwise({redirectTo: "/login"})
+
+      $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {
+         return {
+             'request': function (config) {
+                 config.headers = config.headers || {};
+                 if ($localStorage.token) {
+                     config.headers.token = $localStorage.token;
+                 }
+                 return config;
+             },
+             'responseError': function (response) {
+                 if (response.status === 401 || response.status === 403) {
+                     $location.path('/');
+                 }
+                 return $q.reject(response);
+             }
+         };
+      }]);
 });
 
 app.directive('navBar', function() {

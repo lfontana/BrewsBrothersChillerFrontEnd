@@ -37,8 +37,11 @@ app.controller('HomeController', function($scope, $http){
     $scope.singleBrew = false;
   };
 });
-app.controller('LoginController', function($scope, $anchorScroll, $location){
+app.controller('LoginController', function($scope, $anchorScroll, $location, $http){
   $scope.place = 'Login'
+  $scope.googleauth = function(){
+    window.location='http://localhost:3000/auth/google'
+  }
   $scope.toAbout = function() {
    $location.hash('about');
    $anchorScroll();
@@ -140,3 +143,10 @@ app.controller('NewBrewController', function($scope, $http){
     $scope.brew.style = "Style";
   };
 });
+
+app.controller('authController', function($scope, $http,$routeParams,$localStorage){
+  //Get token out of header and set in local storage
+  console.log($routeParams);
+  $localStorage.token = $routeParams.token;
+  
+})
