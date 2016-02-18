@@ -1,5 +1,6 @@
 {
-  "firebase": "dryflyryan",
+
+  "firebase": "BrewsBrothersChillerFrontEnd",
   "public": "./",
   "ignore": [
     "firebase.json",
