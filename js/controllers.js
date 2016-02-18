@@ -21,7 +21,7 @@ app.controller('mainController', function($scope, $http, $localStorage, $locatio
       }
     ]
   }
-  $http.get('https://chillerdb.herokuapp.com/dashboard').then(function(data){
+  $http.get(config.host +'dashboard').then(function(data){
     $scope.brews = data.data;
     $scope.brews.push($scope.sampleData);
   });
@@ -32,7 +32,7 @@ app.controller('mainController', function($scope, $http, $localStorage, $locatio
 });
 
 app.controller('HomeController', function($scope, $http){
-  $http.get('http://localhost:3000/dashboard').then(function(data){
+  $http.get(config.host +'dashboard').then(function(data){
     console.log(data);
   })
   $scope.greeting = 'Welcome Brews Brothers';
@@ -49,7 +49,8 @@ app.controller('HomeController', function($scope, $http){
 app.controller('LoginController', function($scope, $anchorScroll, $location, $http){
   $scope.place = 'Login'
   $scope.googleauth = function(){
-    window.location='http://localhost:3000/auth/google'
+    console.log(config.host);
+    window.location= config.host+'auth/google'
   }
   $scope.toAbout = function() {
    $location.hash('about');
@@ -70,11 +71,11 @@ app.controller('NewBrewController', function($scope, $http){
     console.log($scope.brew);
     $scope.brews.push($scope.brew)
     // $http.post('https://chillerdb.herokuapp.com/batch', $scope.brew, config).then(successCallback, errorCallback);
-    $http.post('https://chillerdb.herokuapp.com/dashboard', $scope.brew).then(function(successCallback, errorCallback){});
+    $http.post(config.host +'dashboard', $scope.brew).then(function(successCallback, errorCallback){});
     clearBrew();
   }
   $scope.deleteBatch = function(){
-    $http.delete('https://chillerdb.herokuapp.com/dashboard', $scope.brew).then(function(successCallback, errorCallback){});
+    $http.delete(config.host +'dashboard', $scope.brew).then(function(successCallback, errorCallback){});
     clearBrew();
   }
   $scope.setStyle = function(style){
