@@ -1,4 +1,4 @@
-app.controller('mainController', function($scope, $http) {
+app.controller('mainController', function($scope, $http, $localStorage, $location) {
   $scope.user_id = 1;
   $scope.sampleData = {
     name: "Pale Ale - Default",
@@ -25,8 +25,16 @@ app.controller('mainController', function($scope, $http) {
     $scope.brews = data.data;
     $scope.brews.push($scope.sampleData);
   });
+  $scope.logout = function(){
+    $localStorage.$reset();
+    $location.path('/');
+  }
 });
+
 app.controller('HomeController', function($scope, $http){
+  $http.get('http://localhost:3000/dashboard').then(function(data){
+    console.log(data);
+  })
   $scope.greeting = 'Welcome Brews Brothers';
   $scope.singleBrew = false;
   $scope.showBatch = function(batch) {
@@ -40,6 +48,7 @@ app.controller('HomeController', function($scope, $http){
     $http.post('http://localhost:3333/dashboard')
   }
 });
+
 app.controller('LoginController', function($scope, $anchorScroll, $location, $http){
   $scope.place = 'Login'
   $scope.googleauth = function(){
@@ -53,6 +62,7 @@ app.controller('LoginController', function($scope, $anchorScroll, $location, $ht
 // app.controller('BatchController', function($scope, $stateParams){
 //   $scope.place = 'Batch View';
 // })
+
 app.controller('NewBrewController', function($scope, $http){
   clearBrew()
   $scope.place = 'New Brew'
@@ -147,9 +157,10 @@ app.controller('NewBrewController', function($scope, $http){
   };
 });
 
-app.controller('authController', function($scope, $http,$routeParams,$localStorage){
+app.controller('authController', function($scope, $http,$routeParams,$localStorage, $location){
   //Get token out of header and set in local storage
   console.log($routeParams);
   $localStorage.token = $routeParams.token;
-  
+  $location.path('/home')
+
 })
