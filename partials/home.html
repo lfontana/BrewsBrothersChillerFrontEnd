@@ -10,7 +10,7 @@
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
   <div class="batch-card">
     <div class="col-md-3">
-      <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
+      <a ng-click="showBatch(brew)">
         <div class="beer-glass-container">
           <svg
           class="glass-svg" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">

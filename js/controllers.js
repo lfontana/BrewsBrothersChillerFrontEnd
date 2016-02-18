@@ -45,7 +45,10 @@ app.controller('HomeController', function($scope, $http){
     $scope.singleBrew = false;
   };
   $scope.runBatch = function() {
-    $http.post('http://localhost:3333/dashboard')
+    $http.post('http://localhost:3333/dashboard/startBrew')
+  };
+  $scope.saveBatchData = function(brew) {
+    $http.post('http://localhost:3333/dashboard/saveBatch', brew)
   }
 });
 

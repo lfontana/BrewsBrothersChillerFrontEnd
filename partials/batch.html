@@ -7,8 +7,9 @@
     </a>
   </div>
   <div class="media-body">
-    <h4 class="media-heading">Name: {{batch.name}} <small class="date">Creation date: {{batch.created | date}}</small></h4>
+    <h4 class="media-heading">Name: <input type="text" name="batchName" ng-model="batch.name"><small class="date">Creation date: {{batch.created | date}}</small></h4>
     <p><small>Style: {{batch.style}}</small> <small class="date">Last run: {{batch.lastRun | date}}</small></p>
-    <input type="text" name="notes" placeholder="make notes on this beer here" ng-model="brew.notes">
+    <input type="text" name="notes" placeholder="make notes on this beer here" ng-model="batch.notes">
+    <button type="button" ng-click="saveBatchData(batch)"></button>
   </div>
 </div>
