@@ -1,5 +1,5 @@
 config = {
-  host:'https://chillerdb.herokuapp.com/'
+  host:'http://localhost:3000/'
 }
 
 //Production
