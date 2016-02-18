@@ -52,6 +52,11 @@
         </div>
       </div>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star favorite-button-clicked"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty favorite-button-empty"></span></div>
+    <div class="media-body">
+      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: {{brew.created | date}}</small></h4>
+      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: {{brew.lastRun | date}}</small></h5>
+      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
     </div>
+  </div>
   </div>
 </div>
