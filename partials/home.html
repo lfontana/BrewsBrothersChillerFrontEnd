@@ -4,17 +4,20 @@
 <!-- <a href="#/login" class="btn btn-default lower" ng-click="clear()">Logout</a>
 <a href="#/newbrew" class="btn btn-default lower" ng-click="clear()">New Brew</a> -->
 <batch ng-show="singleBrew"></batch>
-<div class="">
+<!-- <div class="">
   {{brews}}
-</div>
+</div> -->
 <div class="brews-container" ng-repeat="brew in brews" ng-show="!singleBrew">
   <div class="batch-card">
     <div class="col-md-3">
       <a ng-href="#/batch:{{brew.name}}" ng-click="clear()">
         <div class="beer-glass-container">
-          <iframe class="glass-svg" src="./images/noun_158151_cc.svg"></iframe>
-          <!-- <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/27669-200.png" alt="" class="glass-svg" /> -->
-
+          <svg
+          class="glass-svg" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+            <switch>
+              <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/><g i:extraneous="self"><g><g><path d="M40.24,22.198l1.327,22.326h-3.51l-1.338-22.326h-6.273l3.868,59.859h0.002c0.033,4.47,6.827,7.967,15.497,7.967      c8.669,0,15.462-3.497,15.497-7.965h0.002l4.061-59.86H40.24z"/></g><g><path d="M49.812,94.708c-11.215,0-20-4.612-20-10.499v-0.16l-5.7-78.758h51.78L69.81,84.286      C69.812,90.097,61.027,94.708,49.812,94.708z M31.882,84.943c0.817,4.279,8.695,7.766,17.93,7.766c9.757,0,18-3.892,18-8.499      l5.92-76.918h-47.47L31.882,84.943z"/></g></g></g>
+            </switch>
+          </svg>
         </div>
       </a>
     </div>
@@ -52,11 +55,7 @@
         </div>
       </div>
       <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star favorite-button-clicked"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty favorite-button-empty"></span></div>
-    <div class="media-body">
-      <h4 class="media-heading" ng-click="showBatch(brew)">Name: {{brew.name}}  <small class="date">Creation date: {{brew.created | date}}</small></h4>
-      <h5 ng-click="showBatch(brew)">Style: {{brew.style}}  <small class="date">Last run: {{brew.lastRun | date}}</small></h5>
-      <div ng-click="brew.favorite = !brew.favorite"><span ng-show="brew.favorite" class="glyphicon glyphicon-star"></span><span ng-show="!brew.favorite" class="glyphicon glyphicon-star-empty"></span></div>
+
     </div>
-  </div>
   </div>
 </div>
