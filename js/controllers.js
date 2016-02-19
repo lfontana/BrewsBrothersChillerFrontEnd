@@ -9,11 +9,11 @@ app.controller('mainController', function($scope, $http, $localStorage, $locatio
     favorite: false,
     schedule: $scope.defaultSchedule
   }
-  $http.get(config.host +'dashboard').then(function(data){
-    $scope.brews = data.data;
-    console.log(data.data);
-    $scope.brews.push($scope.sampleData);
-  });
+  // $http.get(config.host +'dashboard').then(function(data){
+  //   $scope.brews = data.data;
+  //   console.log(data.data);
+  //   $scope.brews.push($scope.sampleData);
+  // });
   $scope.logout = function(){
     $localStorage.$reset();
     $location.path('/');
