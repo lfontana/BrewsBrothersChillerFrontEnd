@@ -19,7 +19,6 @@ app.controller('mainController', function($scope, $http, $localStorage, $locatio
 app.controller('HomeController', function($scope, $http, batch_service){
 
   batch_service.getBatches().then(function(data){
-    console.log(data);
     $scope.brews=data;
   })
 
