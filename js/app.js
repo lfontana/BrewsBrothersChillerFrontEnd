@@ -1,4 +1,4 @@
-var app = angular.module('brewsBros', ['ngRoute','ngStorage']);
+var app = angular.module('brewsBros', ['ngRoute','ngStorage', 'angularMoment']);
 
 app.config(function($routeProvider,$httpProvider) {
     $routeProvider
