@@ -36,7 +36,7 @@ app.controller('HomeController', function($scope, $http, batch_service){
 $scope.brewOn = false;
 
   $scope.runBatch = function(brew) {
-    $http.post(config.host+'dashboard/startBrew',brew);
+    $http.post(config.host+'dashboard/startbrew',brew);
   };
   $scope.saveBatchData = function(brew) {
     console.log(brew);
