@@ -40,7 +40,7 @@ $scope.brewOn = false;
   };
   $scope.saveBatchData = function(brew) {
     console.log(brew);
-    $http.post(config.host+'dashboard/saveBrew', brew);
+    $http.post(config.host+'dashboard/savebrew', brew);
   }
 });
 
