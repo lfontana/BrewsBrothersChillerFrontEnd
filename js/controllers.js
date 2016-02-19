@@ -19,7 +19,7 @@ app.controller('mainController', function($scope, $http, $localStorage, $locatio
 app.controller('HomeController', function($scope, $http, batch_service){
 
   batch_service.getBatches().then(function(data){
-    console.log(data);  
+    console.log(data);
     $scope.brews=data;
   })
 
@@ -33,8 +33,11 @@ app.controller('HomeController', function($scope, $http, batch_service){
   $scope.clear = function() {
     $scope.singleBrew = false;
   };
-  $scope.runBatch = function() {
-    $http.post(config.host+'dashboard/startBrew');
+
+$scope.brewOn = false;
+
+  $scope.runBatch = function(brew) {
+    $http.post(config.host+'dashboard/startBrew',brew);
   };
   $scope.saveBatchData = function(brew) {
     console.log(brew);
