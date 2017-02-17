@@ -2,12 +2,13 @@ language: node_js
 node_js:
   - "4.2.1"
 before_script:
-  - npm install -g gulp
   - npm rebuild node-sass
-  - npm install -g moment
-  - npm install -g angular-moment
-script: gulp test
+script:
+  - gulp test
 install:
   - npm install -g firebase-tools
+  - npm install -g gulp
+  - npm install -g moment
+  - npm install -g angular-moment
 after_success:
   - firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}
